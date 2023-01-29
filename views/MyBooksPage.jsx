@@ -24,6 +24,12 @@ module.exports = function MyBooks({ title, books = [], user, likes }) {
             </label>
             <input name="img" type="text" className="form-control" id="exampleInputPassword1" />
           </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputPassword1" className="form-label">
+            Description
+            </label>
+            <input name="description" type="text" className="form-control" id="exampleInputPassword1" />
+          </div>
           <button type="submit" className="btn btn-primary">
             Add
           </button>

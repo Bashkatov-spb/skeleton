@@ -18,12 +18,15 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { title, author, img } = req.body;
-    if (title && author && img && req.session.userid) {
+    const {
+      title, author, img, description,
+    } = req.body;
+    if (title && author && img && description && req.session.userid) {
       const newBook = await Book.create({
         title,
         author,
         img,
+        description,
         userId: req.session.userid,
       });
       res.renderComponent(BookView, { title: 'My books Page', book: newBook }, { doctype: false });
