@@ -20,10 +20,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT,
       },
-      description: {
-        allowNull: false,
-        type: Sequelize.TEXT,
-      },
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,

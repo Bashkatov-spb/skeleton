@@ -1,13 +1,9 @@
 {
   "development": {
-    "use_env_variable": "DATABASE_URL"
-  },
-  "production": {
-    "use_env_variable": "DATABASE_URL",
-    "dialectOptions": {
-      "ssl": {
-        "rejectUnauthorized" : false
-      }
-    }
+    "username": "ninja",
+    "password": 123456,
+    "database": "books",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   }
 }

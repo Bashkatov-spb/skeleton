@@ -1,6 +1,6 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface) {
+  async up(queryInterface, Sequelize) {
     const likesData = [
       {
         userId: 1,
@@ -23,7 +23,7 @@ module.exports = {
     queryInterface.bulkInsert('Likes', likes);
   },
 
-  async down(queryInterface) {
+  async down(queryInterface, Sequelize) {
     queryInterface.bulkDelete('Likes');
   },
 };

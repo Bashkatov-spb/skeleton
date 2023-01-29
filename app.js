@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-require('dotenv').config();
 require('@babel/register');
 const express = require('express');
 const config = require('./config/config');
@@ -7,7 +6,6 @@ const config = require('./config/config');
 const app = express();
 
 config(app);
-const port = process.env.PORT || 4000;
 
 const authRoute = require('./routes/auth.route');
 const mainRoute = require('./routes/main.route');
@@ -21,6 +19,6 @@ app.use('/mybooks', myBooksRoute);
 app.use('/myfavourites', myFavouritesBooksRoute);
 app.use('/editform', editFormRoute);
 
-app.listen(port, () => {
-  console.log(`Server is started on ${port} port`);
+app.listen(3000, () => {
+  console.log('Server is started on 3000 port');
 });
