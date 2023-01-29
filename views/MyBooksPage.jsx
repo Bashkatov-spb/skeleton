@@ -2,7 +2,9 @@ const React = require('react');
 const Book = require('./Book');
 const Layout = require('./Layout');
 
-module.exports = function MyBooks({ title, books = [], user, likes }) {
+module.exports = function MyBooks({
+  title, books = [], user, likes,
+}) {
   // console.log(books);
   return (
     <Layout title={title} user={user}>
@@ -23,6 +25,12 @@ module.exports = function MyBooks({ title, books = [], user, likes }) {
               Book Img
             </label>
             <input name="img" type="text" className="form-control" id="exampleInputPassword1" />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputPassword1" className="form-label">
+              Description
+            </label>
+            <input name="description" type="text" className="form-control" id="exampleInputPassword1" />
           </div>
           <button type="submit" className="btn btn-primary">
             Add

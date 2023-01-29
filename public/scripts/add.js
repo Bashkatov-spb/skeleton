@@ -1,6 +1,8 @@
 document.querySelector('#addForm')?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const { title, author, img } = e.target;
+  const {
+    title, author, img, description,
+  } = e.target;
   const res = await fetch('/mybooks', {
     method: 'POST',
     headers: {
@@ -10,6 +12,7 @@ document.querySelector('#addForm')?.addEventListener('submit', async (e) => {
       title: title.value,
       author: author.value,
       img: img.value,
+      description: description.value,
     }),
   });
   const data = await res.text();

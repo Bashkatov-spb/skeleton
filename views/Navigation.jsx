@@ -4,16 +4,30 @@ module.exports = function Navigation({ title, user }) {
   return (
     <div className="nav__container">
       <ul className="nav__list">
-        {user && <li className="nav__item">Hello, {user.name}</li>}
+        {user && (
+        <li className="nav__item">
+          Hello,
+          {' '}
+          {user.name}
+        </li>
+        )}
         <li className="nav__item">
           <a href="/">Main</a>
         </li>
-        <li className="nav__item">
-          <a href="/mybooks">MyBooks</a>
-        </li>
-        <li className="nav__item">
-          <a href="/myfavourites">MyFavourites</a>
-        </li>
+        {user && (
+          <>
+            <li className="nav__item">
+              <a href="/mybooks">MyBooks</a>
+            </li>
+            <li className="nav__item">
+              <a href="/myfavourites">MyFavourites</a>
+            </li>
+
+            <li className="nav__item">
+              <a href="/auth/logout">LogOut</a>
+            </li>
+          </>
+        )}
         {!user && (
           <>
             <li className="nav__item">
@@ -23,11 +37,6 @@ module.exports = function Navigation({ title, user }) {
               <a href="/auth/signup">SignUp</a>
             </li>
           </>
-        )}
-        {user && (
-          <li className="nav__item">
-            <a href="/auth/logout">LogOut</a>
-          </li>
         )}
       </ul>
     </div>
